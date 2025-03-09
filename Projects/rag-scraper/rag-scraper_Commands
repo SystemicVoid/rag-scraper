@@ -1,0 +1,17 @@
+
+python interactive-test.py --domain lapalmaoutdoor.com --output-dir ./data --max-pages 20
+
+Complete pipeline with interactive scraping:
+  python cli-module.py --domain example.com --output-dir ./data --interactive
+  1. This runs the full process from scraping to embedding, with interactive page selection.
+  2. Process and embed already scraped content:
+  python process-embed.py --domain example.com --input-dir ./data/html --output-dir ./data
+  2. This processes HTML files you've already scraped and generates embeddings from them.
+  3. For a real workflow, you'd typically:
+    a. First run the interactive scraper to select and download pages:
+    python interactive-test.py --domain example.com --output-dir ./data
+    b. Then process the scraped content:
+    python process-embed.py --domain example.com --input-dir ./data/html --output-dir ./data
+
+  The generated embeddings and metadata will be saved in the specified output directory (./data by default) and can be used
+  for RAG applications.

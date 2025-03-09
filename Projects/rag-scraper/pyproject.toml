@@ -1,0 +1,73 @@
+[project]
+name = "rag-scraper"
+version = "0.1.0"
+description = "Web scraping and embedding generation for RAG systems"
+readme = "README.md"
+authors = [
+    {name = "User", email = "user@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.12,<3.13"  # Using Python 3.12 for better library compatibility
+dependencies = [
+    "beautifulsoup4>=4.12.0", # For HTML parsing
+    "requests>=2.31.0", # For HTTP requests
+    "html2text>=2020.1.16", # For converting HTML to markdown/text
+    "scrapy>=2.11.0", # Advanced web scraping framework
+    "sentence-transformers>=2.2.2", # For generating embeddings
+    "faiss-cpu>=1.7.4", # For vector storage and search
+    "tqdm>=4.66.1", # For progress bars
+    "loguru>=0.7.2", # For better logging
+    "langchain>=0.1.0", # For document processing pipeline
+    "pydantic>=2.5.0", # For data validation
+    "python-dotenv>=1.0.0", # For environment variable management
+    "click>=8.1.7", # For command line interface
+    "bs4>=0.0.2",
+    "dotenv>=0.9.9",
+    "rich>=13.9.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.7.0",
+    "isort>=5.12.0",
+    "mypy>=1.5.1",
+    "flake8>=6.1.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/systemicvoid/rag-scraper"
+"Bug Tracker" = "https://github.com/systemicvoid/rag-scraper/issues"
+
+[project.scripts]
+rag-scraper = "rag_scraper.cli:main"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv]
+package = true
