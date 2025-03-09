@@ -4,14 +4,14 @@ A Python utility for scraping web domains, processing the content, and generatin
 
 ## Overview
 
-This tool is designed to enhance the capabilities of Large Language Models (LLMs) like Claude by providing domain-specific knowledge through RAG techniques. It works by:
+This tool is designed to enhance the capabilities of Large Language Models by providing domain-specific knowledge through RAG techniques. It works by:
 
 1. Crawling and scraping pages within a specified web domain (with interactive selection option)
 2. Processing and cleaning the HTML content into usable text
 3. Generating high-quality embeddings from the processed content
 4. Storing these embeddings in a vector database ready for RAG applications
 
-Think of it as building a specialized knowledge library that Claude can reference when answering questions about specific domains.
+Think of it as building a specialized knowledge library that LLMs can reference when answering questions about specific domains.
 
 ## Installation
 
